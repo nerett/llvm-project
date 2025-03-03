@@ -192,6 +192,14 @@ MACHINE_FUNCTION_PASS("verify<machine-trace-metrics>", MachineTraceMetricsVerifi
                                           PARAMS)
 #endif
 MACHINE_FUNCTION_PASS_WITH_PARAMS(
+    "mirfs-discriminators", "MIRAddFSDiscriminatorsPass",
+    [](FSDiscriminatorPass Pass) { return MIRAddFSDiscriminatorsPass(Pass); },
+    [PB = this](StringRef Params) {
+      return parseFSDiscriminatorPassOptions(*PB, Params);
+    },
+    "fs-discr-pass")
+
+MACHINE_FUNCTION_PASS_WITH_PARAMS(
     "regallocfast", "RegAllocFastPass",
     [](RegAllocFastPass::Options Opts) { return RegAllocFastPass(Opts); },
     [PB = this](StringRef Params) {
@@ -262,7 +270,6 @@ DUMMY_MACHINE_FUNCTION_PASS("machine-sanmd", MachineSanitizerBinaryMetadata)
 DUMMY_MACHINE_FUNCTION_PASS("machine-sink", MachineSinkingPass)
 DUMMY_MACHINE_FUNCTION_PASS("machine-uniformity", MachineUniformityInfoWrapperPass)
 DUMMY_MACHINE_FUNCTION_PASS("machineinstr-printer", MachineFunctionPrinterPass)
-DUMMY_MACHINE_FUNCTION_PASS("mirfs-discriminators", MIRAddFSDiscriminatorsPass)
 DUMMY_MACHINE_FUNCTION_PASS("patchable-function", PatchableFunctionPass)
 DUMMY_MACHINE_FUNCTION_PASS("postra-machine-sink", PostRAMachineSinkingPass)
 DUMMY_MACHINE_FUNCTION_PASS("print-machine-uniformity", MachineUniformityInfoPrinterPass)
