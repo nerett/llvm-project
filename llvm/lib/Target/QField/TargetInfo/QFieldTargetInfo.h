@@ -1,0 +1,12 @@
+#ifndef LLVM_LIB_TARGET_QFIELD_TARGETINFO_QFIELDTARGETINFO_H
+#define LLVM_LIB_TARGET_QFIELD_TARGETINFO_QFIELDTARGETINFO_H
+
+namespace llvm {
+
+class Target;
+
+Target &getTheQFieldTarget();
+
+} // end namespace llvm
+
+#endif // LLVM_LIB_TARGET_QFIELD_TARGETINFO_QFIELDTARGETINFO_H
