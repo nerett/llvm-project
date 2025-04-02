@@ -9,6 +9,7 @@ tablegen(LLVM QFieldGenMCPseudoLowering.inc -gen-pseudo-lowering)
 tablegen(LLVM QFieldGenDAGISel.inc -gen-dag-isel)
 tablegen(LLVM QFieldGenCallingConv.inc -gen-callingconv)
 tablegen(LLVM QFieldGenAsmWriter.inc -gen-asm-writer)
+tablegen(LLVM QFieldGenMCCodeEmitter.inc -gen-emitter)
 
 add_public_tablegen_target(QFieldCommonTableGen)
 
