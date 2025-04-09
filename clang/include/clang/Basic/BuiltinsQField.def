@@ -1,0 +1,4 @@
+BUILTIN(sim_put_pixel, "vUiUiUi", "nc")
+BUILTIN(sim_flush, "v", "nc")
+
+#undef BUILTIN
